@@ -5,7 +5,10 @@
     "author": "gxm",
     "license": "MIT",
     "scripts": {},
-    "dependencies": {},
+    "dependencies": {
+        "path": "^0.12.7",
+        "ts-loader": "7.0.5"
+    },
     "devDependencies": {
         "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "^9.0.1",
