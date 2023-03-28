@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require('path');
 const config = {
     entry: {
-        index: path.join(__dirname, '/src/main.ts'), // 入口文件,
+        index: path.join(__dirname, '/src/index.js'), // 入口文件,
     },
     output: {
         path: path.join(__dirname, '/dist'), //打包后的文件存放的地方
@@ -15,8 +15,8 @@ const config = {
     },
     module: {
         rules: [
-            { test: /\.ts$/, loader: "ts-loader", options: { allowTsInNodeModules: false }, exclude: "/node_modules/" },
-            //   { test: /\.js$/, use: ['babel-loader'], include: path.join(__dirname, 'src') },
+            // { test: /\.ts$/, loader: "ts-loader", options: { allowTsInNodeModules: false }, exclude: "/node_modules/" },
+            { test: /\.js$/, use: ['babel-loader'], include: path.join(__dirname, 'src') },
             //   { test: [/\.vert$/, /\.frag$/, /\.glsl$/], use: 'raw-loader' }
         ],
     },
@@ -26,9 +26,9 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: "head",
-            title: "Phaser example",
+            title: "MusicVisual",
             template: path.join(__dirname, "./index.html"),
-            chunks: ["tooqing"]
+            chunks: ["MusicVisual"]
         }),
         new CopyWebpackPlugin({
             patterns: [
